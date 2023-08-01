@@ -1,0 +1,25 @@
+<h1>Customers Details</h1>
+
+<p id="notice"><%= notice %></p>
+<ul>    
+    <h3>Name</h3>
+    <p><%=@customer.name%></p>
+    
+    <h3>Name</h3>
+    <p><%=@customer.surname%></p>
+
+    <h3>Email</h3>
+    <h1><%=@customer.email%></h1>
+</li>
+</ul>
+
+<ul>
+  <li><%= link_to "Edit Customer", edit_customer_path(@customer) %></li>
+  <li><%= link_to "Destroy", customer_path(@customer), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+
+    <li><%= link_to "Back",customers_path%></li>
+</ul>
+
