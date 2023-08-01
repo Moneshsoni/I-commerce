@@ -1,0 +1,12 @@
+<h1>Sellers!</h1>
+<ul>
+    <% @sellers.each do |seller|%>
+        <li>
+            <%= link_to seller.name , seller_path(seller)%>
+        </li>
+    <%end%>
+</ul>
+
+<%= link_to "Add Seller", new_seller_path %>
+<!-- app/views/pages/home.html.erb -->
+

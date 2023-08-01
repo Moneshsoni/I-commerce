@@ -1,0 +1,32 @@
+<%= form_with model: product do |form|%>
+    <%= notice%>
+    <div>
+        <%= form.label :name%><br>
+        <%= form.text_field :name%><br>
+        <br>
+    </div>
+
+    <div>
+        <%= form.label :category%><br>
+        <%= form.text_field :category%><br>
+        <br>
+    </div>
+
+    <div>
+        <%= form.label :price%><br>
+        <%= form.number_field :price%><br>
+        <br>
+    </div>
+
+    <div>
+        <%= form.label :available%><br>
+        <%= form.radio_button :available, "Available"%><br>
+        
+        <br>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+
+<%end%>

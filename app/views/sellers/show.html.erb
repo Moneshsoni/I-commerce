@@ -1,0 +1,77 @@
+<h1>Seller Details</h1>
+
+<p id = "notice"><%#=notice%></p>
+<ul>
+  
+    <h3>Name</h3>
+    <p><%= @seller.name%></p>
+    
+    <h3>Surname</h3>
+    <p><%= @seller.surname%></p>
+
+    <h3>Email</h3>
+    <p><%= @seller.email %></p>
+</ul>
+
+
+<ul>
+  <li><%= link_to "Edit Seller", edit_seller_path(@seller) %></li>  
+  <li><%= link_to "Destroy", seller_path(@seller), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+
+    <li><%= link_to "Back",sellers_path%></li>
+
+</ul>
+
+<h2>Products</h2>
+<%@seller.products.each do |product|%>
+
+<p>
+  <strong>Name: </strong>
+  <%= product.name%>
+</p>
+
+<p>
+  <strong>Category </strong>
+  <%= product.category%>
+</p>
+
+<p>
+  <strong>Price: </strong>
+  <%= product.price%>
+</p>
+
+<p>
+  <strong>Available: </strong>
+  <%= product.available%>
+</p>
+<%end%>
+
+
+<h2>Add a Product:</h2>
+<%= form_with model: [ @seller, @seller.products.build ] do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :category %><br>
+    <%= form.text_field :category %>
+  </p>
+
+  <p>
+    <%= form.label :price%><br>
+    <%= form.number_field :price%>
+  </p>
+
+  <p>
+    <%= form.label :available%>
+    <%= form.radio_button :available, "Available"%>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

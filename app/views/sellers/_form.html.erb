@@ -1,0 +1,32 @@
+<%= form_with model: seller do |form|%>
+
+    <%# @error_messages.each do |message| %>
+    <div>
+        <%= form.label :name%><br>
+        <br>
+        <%= form.text_field :name%>
+        <br>
+        <%#= message %>
+    </div>
+
+    <div>
+        <%= form.label :surname%><br>
+        <br>
+        <%= form.text_field :surname%>
+        <br>
+        <%#= message %>
+    </div>
+    <div>
+        <%= form.label :email%>
+        <br>
+        <%= form.email_field :email%>
+        <br>
+        <%#= message%>
+    </div>
+    <%# end %>
+
+    <div>
+        <br>
+        <%= form.submit%>
+    </div>
+<%end%>

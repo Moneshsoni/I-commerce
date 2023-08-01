@@ -1,0 +1,41 @@
+<h1>Product Details</h1>
+
+<ul>
+    <h3>Name</h3>
+    <p>
+        <%= @product.name%>
+    <p>
+
+    <h3>Category</h3>
+    <p>
+        <%= @product.category%>
+    </p>
+
+    <h3>Price</h3>
+    <p>
+        <%= @product.price %>
+    </p>
+
+    <h3>Available</h3>
+    <p>
+        <%= @product.available%>
+    </p>
+
+</ul>
+
+
+<ul>
+    <li>
+        <%= link_to "Update Product" , edit_product_path(@product)%>
+    </li>
+
+    <li>
+        <%= link_to "Delete Product",product_path(@product),data:{turbo_method: :delete,turbo_confirm: "Are you sure Delete Product"}%>
+    </li>
+
+    <li>
+        <%= link_to "Back", products_path%>
+    </li>
+
+
+</ul>
