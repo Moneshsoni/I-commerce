@@ -1,10 +1,14 @@
 <h1>Customers!</h1>
 <ul>
-<% @customers.each do |customer|%>
-    <li>
-        <%= link_to customer.name, customer_path(customer)%>
-    </li>
+<% if user_signed_in? %>
 
+    <p>Welcome, <%= current_user.email %></p>
+    <% @customers.each do |customer|%>
+        <li>
+            <%= link_to customer.name, customer_path(customer)%>
+        </li>
+
+    <%end%>
 <%end%>
 </ul>
 

@@ -9,10 +9,14 @@ class CustomersController < ApplicationController
   end
 
   def new
+    
+    binding.pry
+    
     @customer = Customer.new
   end
 
   def create
+    binding.pry
     @customer = Customer.new(customer_params)
     if @customer.save
       redirect_to @customer , notice: "Customer was successfully created."
