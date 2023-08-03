@@ -1,6 +1,7 @@
 class SellersController < ApplicationController
-  
+  before_action :authenticate_rseller!
   def index
+    # @sellers = current_sellers
     @sellers = Seller.all
   end
 

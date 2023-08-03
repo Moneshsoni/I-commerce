@@ -14,8 +14,20 @@
           </li>
 
            <li class="nav-item">
-            <%#= link_to "Products", products_path, class: "nav-link" %>
+            <center><%= button_to "Signout Seller", destroy_rseller_session_path,
+              method: :delete
+            %></center>        
           </li>
+
+          <li class="nav-item">
+            <%#= link_to "SignOut Customer", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <%#= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+            <%= button_to "Sign Out Customer", destroy_user_session_path, method: :delete %>
+
+          </li>
+
+
+          
           <!-- Add more navbar items as needed -->
         </ul>
       </div>
