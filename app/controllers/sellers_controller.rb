@@ -1,8 +1,10 @@
 class SellersController < ApplicationController
   before_action :authenticate_rseller!
+  
   def index
-    # @sellers = current_sellers
-    @sellers = Seller.all
+    # @sellers = Seller.first
+    @sellers = current_rseller
+    # @time_entries = current_user.time_entries
   end
 
   def show
@@ -10,11 +12,12 @@ class SellersController < ApplicationController
   end
 
   def new
-    @seller = Seller.new
+    @seller = current_rseller.seller.build
   end
 
   def create
-    @seller = Seller.new(seller_params)
+    binding.pry
+    @seller = current_rseller.seller.new(seller_params)
     if @seller.save
       redirect_to @seller, notice: 'Seller was successfully created'
     else
@@ -55,3 +58,5 @@ class SellersController < ApplicationController
 
 
 end
+
+
